@@ -10,6 +10,8 @@
     <string name="lbl_Meta_score">Score</string>
     <string name="lbl_imdbRating">Rating</string>
     <string name="lbl_votes">Votes</string>
-
+    <string name="error_no_internet">Please check your internet connection</string>
     <string name="btn_search">Search</string>
+    <string name="dialog_close">Close</string>
+
 </resources>

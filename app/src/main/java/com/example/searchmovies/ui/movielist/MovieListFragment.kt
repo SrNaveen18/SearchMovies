@@ -2,6 +2,7 @@ package com.example.searchmovies.ui.movielist
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -9,6 +10,7 @@ import com.example.searchmovies.BR
 import com.example.searchmovies.R
 import com.example.searchmovies.base.BaseFragment
 import com.example.searchmovies.databinding.FragmentMovieListBinding
+import com.example.searchmovies.extension.isNetConnected
 import com.example.searchmovies.ui.movielist.pagingadapter.LoadingFooterAdapter
 import com.example.searchmovies.ui.movielist.pagingadapter.PagingAdapter
 import kotlinx.android.synthetic.main.fragment_movie_list.*
@@ -34,7 +36,9 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
         searchView.setOnQueryTextListener(this)
         btnSearch.setOnClickListener(this)
         initAdapter()
-        checkCachedValues()
+        if (checkInternetAvailable()){
+            checkCachedValues()
+        }
     }
 
     private fun initAdapter() {
@@ -105,5 +109,26 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
 
     override fun onQueryTextChange(newText: String?): Boolean {
         return true
+    }
+
+    private fun checkInternetAvailable(): Boolean {
+        val hasInternet = requireActivity().isNetConnected()
+        return if (!hasInternet) {
+            showMessageAlert(getString(R.string.error_no_internet))
+            false
+        } else {
+            true
+        }
+    }
+
+    private fun showMessageAlert(message: String) {
+        val dialog = AlertDialog.Builder(requireActivity())
+        dialog.setMessage(message)
+        dialog.setCancelable(false)
+        dialog.setPositiveButton(getString(R.string.dialog_close)) { dialog, _ ->
+            requireActivity().finish()
+            dialog?.dismiss()
+        }
+        dialog.create().show()
     }
 }
