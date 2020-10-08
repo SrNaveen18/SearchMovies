@@ -4,7 +4,7 @@
 
     <string name="lbl_director">Director</string>
     <string name="lbl_actor">Actor</string>
-    <string name="lbl_plot">Plot</string>
+    <string name="lbl_plot">Story</string>
     <string name="lbl_writer">Writer</string>
 
     <string name="lbl_Meta_score">Score</string>
