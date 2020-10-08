@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SearchMovies</string>
+    <string name="hint_search_movie">Movies</string>
+
+    <string name="lbl_director">Director</string>
+    <string name="lbl_actor">Actor</string>
+    <string name="lbl_plot">Plot</string>
+    <string name="lbl_writer">Writer</string>
+
+    <string name="lbl_Meta_score">Score</string>
+    <string name="lbl_imdbRating">Rating</string>
+    <string name="lbl_votes">Votes</string>
+
+    <string name="btn_search">Search</string>
+</resources>
