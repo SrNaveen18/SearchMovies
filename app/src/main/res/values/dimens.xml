@@ -5,6 +5,7 @@
     <dimen name="textCaption">12sp</dimen>
     <dimen name="textHeader">24sp</dimen>
     <dimen name="textMedium">16sp</dimen>
+    <dimen name="textXMedium">20sp</dimen>
 
     <dimen name="size_1dp">1dp</dimen>
     <dimen name="size_2dp">2dp</dimen>

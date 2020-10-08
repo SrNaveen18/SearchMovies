@@ -58,10 +58,10 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
         searchJob?.cancel()
         searchJob = lifecycleScope.launch {
             movieListViewModel.searchMovie(query).collectLatest {
-                hideProgress()
                 pagingAdapter?.submitData(it)
             }
         }
+        hideProgress()
     }
 
     private fun checkCachedValues() {

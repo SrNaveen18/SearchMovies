@@ -58,7 +58,7 @@
                 android:paddingEnd="@dimen/size_16dp"
                 android:text="@{movieDetailsVM.details.title}"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/textMedium"
+                android:textSize="@dimen/textXMedium"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/txt_year"
                 app:layout_constraintEnd_toStartOf="@id/imgPlay"
@@ -74,7 +74,7 @@
                 android:paddingBottom="@dimen/size_16dp"
                 android:text="@{movieDetailsVM.details.year}"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/textNormal"
+                android:textSize="@dimen/textMedium"
                 app:layout_constraintBottom_toBottomOf="@id/poster_image"
                 app:layout_constraintEnd_toStartOf="@id/imgPlay"
                 app:layout_constraintStart_toStartOf="parent" />
